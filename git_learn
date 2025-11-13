@@ -1,0 +1,23 @@
+git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+Clone this repository to your home directory.
+git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+Add to the ~/.bashrc:
+
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source "$HOME/.bash-git-prompt/gitprompt.sh"
+fi
+
+
+
+echo "# python" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:dr-ksys/python.git
+git push -u origin main
+
+git remote add origin git@github.com:dr-ksys/python.git
+git branch -M main
+git push -u origin main
