@@ -1,0 +1,31 @@
+root@dlp:~ # pkg install -y rust
+root@dlp:~ # rustc --version
+rustc 1.79.0 (129f3b996 2024-06-10) (built from a source tarball)
+# verify to create test program
+root@dlp:~ # mkdir rust-test
+root@dlp:~ # cd rust-test
+root@dlp:~/rust-test # cat > hello-rust.rs <<'EOF'
+fn main() {
+    println!("Hello Rust world !");
+}
+EOF 
+
+root@dlp:~/rust-test # rustc hello-rust.rs
+root@dlp:~/rust-test # ./hello-rust
+Hello Rust world !
+# verify to create Hello World with Cargo
+root@dlp:~ # cargo --version
+cargo 1.79.0
+root@dlp:~ # cargo new cargo-test --bin
+    Creating binary (application) `cargo-test` package
+note: see more `Cargo.toml` keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+root@dlp:~ # cd cargo-test
+root@dlp:~/cargo-test # cargo build
+   Compiling cargo-test v0.1.0 (/root/cargo-test)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.15s
+
+root@dlp:~/cargo-test # cargo run
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.02s
+     Running `target/debug/cargo-test`
+Hello, world!
